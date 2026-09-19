@@ -1,1 +1,472 @@
+/* ================================
+   Base
+================================ */
 
+:root {
+  --background: #ffffff;
+  --background-soft: #f5f7f8;
+  --text: #172126;
+  --text-soft: #5d6a70;
+  --border: #dce3e6;
+  --primary: #173f4f;
+  --primary-hover: #0e2f3c;
+  --accent: #2c6975;
+  --max-width: 1180px;
+  --radius: 12px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+
+  color: var(--text);
+  background: var(--background);
+  line-height: 1.65;
+}
+
+a {
+  color: inherit;
+}
+
+.container {
+  width: min(92%, var(--max-width));
+  margin: 0 auto;
+}
+
+
+/* ================================
+   Header
+================================ */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid var(--border);
+}
+
+.header-content {
+  min-height: 72px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+.brand {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+
+  text-decoration: none;
+}
+
+.brand-name {
+  font-size: 1.35rem;
+  font-weight: 750;
+  letter-spacing: 0.03em;
+
+  color: var(--primary);
+}
+
+.brand-full {
+  color: var(--text-soft);
+  font-size: 0.95rem;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: var(--text-soft);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.main-nav a:hover {
+  color: var(--primary);
+}
+
+
+/* ================================
+   Hero
+================================ */
+
+.hero {
+  padding: 110px 0 105px;
+
+  border-bottom: 1px solid var(--border);
+
+  background:
+    linear-gradient(
+      180deg,
+      #f7fafb 0%,
+      #ffffff 100%
+    );
+}
+
+.hero-content {
+  max-width: 880px;
+}
+
+.eyebrow,
+.section-label {
+  margin: 0 0 12px;
+
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+
+  font-size: 0.78rem;
+  font-weight: 700;
+
+  color: var(--accent);
+}
+
+.hero h1 {
+  margin: 0;
+
+  font-size: clamp(3rem, 7vw, 5.6rem);
+  line-height: 1.02;
+
+  letter-spacing: -0.04em;
+}
+
+.highlight {
+  color: var(--primary);
+}
+
+.hero-description {
+  max-width: 760px;
+
+  margin: 28px 0 0;
+
+  font-size: 1.25rem;
+  line-height: 1.7;
+
+  color: var(--text-soft);
+}
+
+.hero-actions {
+  margin-top: 38px;
+
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+
+/* ================================
+   Buttons
+================================ */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 46px;
+
+  padding: 10px 20px;
+
+  border-radius: 8px;
+
+  text-decoration: none;
+  font-weight: 650;
+}
+
+.button-primary {
+  color: #ffffff;
+  background: var(--primary);
+}
+
+.button-primary:hover {
+  background: var(--primary-hover);
+}
+
+.button-secondary {
+  color: var(--primary);
+  background: #ffffff;
+
+  border: 1px solid var(--border);
+}
+
+.button-secondary:hover {
+  border-color: var(--primary);
+}
+
+
+/* ================================
+   Sections
+================================ */
+
+.section {
+  padding: 90px 0;
+}
+
+.section-muted {
+  background: var(--background-soft);
+}
+
+.section-heading {
+  max-width: 720px;
+  margin-bottom: 42px;
+}
+
+.section-heading h2,
+.about-grid h2,
+.community h2 {
+  margin: 0 0 18px;
+
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.15;
+
+  letter-spacing: -0.025em;
+}
+
+.section-heading p,
+.about-content,
+.community-intro {
+  color: var(--text-soft);
+}
+
+
+/* ================================
+   Resource Cards
+================================ */
+
+.resource-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 20px;
+}
+
+.resource-card {
+  min-height: 300px;
+
+  padding: 28px;
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+
+  text-decoration: none;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #ffffff;
+
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    border-color 0.18s ease;
+}
+
+.resource-card:hover {
+  transform: translateY(-4px);
+
+  border-color: #b7c7cd;
+
+  box-shadow:
+    0 12px 32px
+    rgba(25, 52, 63, 0.08);
+}
+
+.card-number {
+  color: #8b999f;
+
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.resource-card h3 {
+  margin: 22px 0 12px;
+
+  font-size: 1.45rem;
+}
+
+.resource-card p {
+  margin: 0;
+
+  color: var(--text-soft);
+}
+
+.card-link {
+  margin-top: auto;
+  padding-top: 28px;
+
+  color: var(--primary);
+  font-weight: 650;
+}
+
+
+/* ================================
+   About
+================================ */
+
+.about-grid {
+  display: grid;
+
+  grid-template-columns: 0.8fr 1.4fr;
+
+  gap: 70px;
+}
+
+.about-content p:first-child {
+  margin-top: 0;
+}
+
+
+/* ================================
+   Community
+================================ */
+
+.community {
+  text-align: center;
+}
+
+.community-intro {
+  max-width: 700px;
+  margin: 0 auto 44px;
+}
+
+.community-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 20px;
+
+  text-align: left;
+}
+
+.community-item {
+  padding: 26px;
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.community-item h3 {
+  margin-top: 0;
+}
+
+.community-item p {
+  margin-bottom: 0;
+
+  color: var(--text-soft);
+}
+
+.community-button {
+  margin-top: 36px;
+}
+
+
+/* ================================
+   Footer
+================================ */
+
+.site-footer {
+  padding: 28px 0;
+
+  border-top: 1px solid var(--border);
+
+  color: var(--text-soft);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.footer-content strong {
+  margin-right: 8px;
+
+  color: var(--text);
+}
+
+
+/* ================================
+   Responsive
+================================ */
+
+@media (max-width: 900px) {
+
+  .resource-grid,
+  .community-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+}
+
+
+@media (max-width: 680px) {
+
+  .header-content {
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding: 16px 0;
+  }
+
+  .main-nav {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .brand-full {
+    display: none;
+  }
+
+  .hero {
+    padding: 80px 0;
+  }
+
+  .resource-grid,
+  .community-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 70px 0;
+  }
+
+  .footer-content {
+    flex-direction: column;
+  }
+
+}
