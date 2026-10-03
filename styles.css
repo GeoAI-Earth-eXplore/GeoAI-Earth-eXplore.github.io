@@ -315,8 +315,8 @@ a {
 
 .resource-card h3 {
   margin: 22px 0 12px;
-
-  font-size: 1.45rem;
+  font-size: 1.25rem;
+  white-space: nowrap;
 }
 
 .resource-card p {
